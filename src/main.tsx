@@ -10,8 +10,6 @@ ReactDOM
   .createRoot(document.getElementById('root') as HTMLElement)
   .render(
     <Provider store={ store }>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </Provider>,
   ); // colcoar Provider -- disponibiliza os estados da store para todos os componentes da aplicação
