@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+/* import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalState, Dispatch } from '../types';
 import { dataFecth, infoFecth } from '../redux/actions';
@@ -109,3 +109,4 @@ function WalletForm() {
 }
 
 export default WalletForm;
+*/
