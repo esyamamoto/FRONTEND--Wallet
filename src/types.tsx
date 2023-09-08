@@ -36,17 +36,8 @@ export type Wallet = {
 };
 
 export type GlobalState = {
-  user: {
-    email: string;
-  };
-  wallet: {
-    currencies: string[];
-    expenses: FormWallet[];
-    editor: boolean;
-    idToEdit: number;
-  };
-  isLoading: boolean;
-  error: any;
+  user: User,
+  wallet: Wallet,
 };
 
 export type Dispatch = ThunkDispatch<GlobalState, null, AnyAction>;
