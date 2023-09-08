@@ -5,7 +5,8 @@ import { userEmail } from '../redux/actions';
 
 function Login() {
   const [userInfo, setUserInfo] = useState({ email: '', password: '' });
-  const [/* buttonOk */, setButtonOk] = useState(true);
+  const [buttonOk, setButtonOk] = useState(true);
+  const { email, password } = userInfo;
 
   const navigate = useNavigate();
   const dispatch = useDispatch(); // criando uma constante apenas para ter acesso a função do dispach, do store que estiver ativo
@@ -14,19 +15,26 @@ function Login() {
   const isValid = () => {
     // Regex for Email https://stackoverflow.com/questions/73825083/regex-for-email-a-za-z2-4
     const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
-    const { email, password } = userInfo;
-    return password.length >= 6 && email.match(emailRegex); // true - valido form
+    if (userInfo.password.length >= 5 && emailRegex.test(userInfo.email)) { // true - valido form // tem delay cuidado***
+      setButtonOk(false);
+    } else {
+      setButtonOk(true);
+    }
   };
 
-  // Função para lidar com mudanças nos campos de entrada (email e senha)
+  // Função para lidar com mudanças nos campos de entrada
+  // ajuda no delay da senha. lenght
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUserInfo({
+    const { name, value } = event.target;
+    const blablabla = {
       ...userInfo,
-      [event.target.name]: event.target.value,
-    });
-    setButtonOk(!isValid());
+      [name]: value,
+    };
+    setUserInfo(blablabla);
+    console.log(blablabla.password.length);
+    isValid();
   };
-
+  // console.log(userInfo.password.length);
   // Função para lidar com o envio do formulário de login
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -65,7 +73,7 @@ function Login() {
       </label>
       <button
         type="submit"
-        disabled={ !isValid }
+        disabled={ buttonOk }
       >
         Entrar
       </button>
