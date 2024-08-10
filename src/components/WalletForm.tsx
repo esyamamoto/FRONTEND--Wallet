@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalState, Dispatch } from '../types';
 import { dataFecth, infoFecth } from '../redux/actions';
+import '../Styles/WalletForm.css';
 
 const InicialStateWallet = {
   id: 0,

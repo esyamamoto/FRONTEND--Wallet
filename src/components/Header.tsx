@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { GlobalState } from '../types';
+import '../Styles/Header.css';
 
 function Header() {
   const { user, wallet } = useSelector((state: GlobalState) => state);
@@ -9,13 +10,11 @@ function Header() {
   ), 0);
 
   return (
-    <>
-      <p data-testid="email-field">
-        {`Email: ${user.email}`}
-      </p>
+    <header>
+      <p data-testid="email-field">{`Email: ${user.email}`}</p>
       <p data-testid="total-field">{totalSpend.toFixed(2)}</p>
       <p data-testid="header-currency-field">BRL</p>
-    </>
+    </header>
   );
 }
 

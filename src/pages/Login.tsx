@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { userEmail } from '../redux/actions';
+import '../Styles/Login.css';
 
 function Login() {
   const [userInfo, setUserInfo] = useState({ email: '', password: '' });
@@ -47,38 +48,40 @@ function Login() {
   };
 
   return (
-    <form onSubmit={ handleSubmit }>
-      <label htmlFor="">
-        E-mail:
-        {' '}
-        <input
-          name="email"
-          type="email"
-          data-testid="email-input"
-          onChange={ handleChange }
-          value={ userInfo.email }
-        />
-      </label>
+    <div className="login-page">
+      <form onSubmit={ handleSubmit }>
+        <label htmlFor="">
+          E-mail:
+          {' '}
+          <input
+            name="email"
+            type="email"
+            data-testid="email-input"
+            onChange={ handleChange }
+            value={ userInfo.email }
+          />
+        </label>
 
-      <label htmlFor="">
-        Senha:
-        {' '}
-        <input
-          name="password"
-          type="password"
-          data-testid="password-input"
-          onChange={ handleChange }
-          value={ userInfo.password }
-        />
-      </label>
-      <button
-        type="submit"
-        disabled={ buttonOk }
-      >
-        Entrar
-      </button>
+        <label htmlFor="">
+          Senha:
+          {' '}
+          <input
+            name="password"
+            type="password"
+            data-testid="password-input"
+            onChange={ handleChange }
+            value={ userInfo.password }
+          />
+        </label>
+        <button
+          type="submit"
+          disabled={ buttonOk }
+        >
+          Entrar
+        </button>
 
-    </form>
+      </form>
+    </div>
   );
 }
 export default Login;

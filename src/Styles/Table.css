@@ -1,0 +1,92 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #8a05be;
+  color: #ffffff;
+  text-align: left;
+}
+
+thead th {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 15px;
+  color: #333333;
+  font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #8a05be;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a0391;
+}
+
+button:focus {
+  outline: none;
+}
+
+button[data-testid="delete-btn"] {
+  background-color: #ff5252;
+}
+
+button[data-testid="delete-btn"]:hover {
+  background-color: #e04747;
+}
+
+@media (max-width: 768px) {
+  thead {
+      display: none;
+  }
+
+  tbody tr {
+      display: block;
+      margin-bottom: 15px;
+  }
+
+  tbody td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 12px;
+      border-bottom: 1px solid #ddd;
+  }
+
+  tbody td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  button {
+      width: 100%;
+      margin-top: 10px;
+  }
+}

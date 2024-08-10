@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalState } from '../types';
 import { removeExpense } from '../redux/actions';
+import '../Styles/Table.css';
 
 function Table() {
   const inicialState = useSelector((state: GlobalState) => state.wallet);

@@ -1,0 +1,82 @@
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin: 15px auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+label {
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333333;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: #f9f9f9;
+  color: #333333;
+}
+
+h3 {
+  font-size: 14px;
+  color: #8a05be;
+  margin-bottom: 8px;
+}
+
+button {
+  background-color: #8a05be;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #6a0391;
+}
+
+@media (max-width: 768px) {
+  form {
+    padding: 12px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}

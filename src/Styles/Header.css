@@ -1,0 +1,27 @@
+/* Header.css */
+
+header {
+  background-color: #8a05be5b;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+header p {
+  margin: 5px 0;
+  color: #000000;
+}
+
+header .email {
+  font-weight: bold;
+}
+
+header .total-spend {
+  font-size: 20px;
+  color: #8a05be;
+}
+
+header .currency {
+  font-size: 16px;
+  color: #666;
+}
